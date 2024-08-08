@@ -6,14 +6,22 @@ import { colors } from "./constants/colors";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
+import GameOverScreen from "./screens/GameOverScreen";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState(null);
+  const [gameIsOver, setGameIsOver] = useState(false);
 
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
     console.log(pickedNumber);
   }
+
+  function gameOverHandler() {
+    setGameIsOver(true);
+  }
+
+  if (gameIsOver && userNumber) return <GameOverScreen />;
 
   return (
     <LinearGradient
@@ -31,7 +39,12 @@ export default function App() {
             <StartGameScreen pickedNumberHandler={pickedNumberHandler} />
           )}
 
-          {userNumber && <GameScreen userNumber={userNumber} />}
+          {userNumber && (
+            <GameScreen
+              userNumber={userNumber}
+              onGameOverHandler={gameOverHandler}
+            />
+          )}
         </SafeAreaView>
       </ImageBackground>
     </LinearGradient>
