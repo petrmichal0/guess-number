@@ -16,13 +16,14 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: colors.title,
     borderRadius: 8,
-    padding: 24,
+    padding: 12,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: colors.primary600,
   },
   numberText: {
     color: colors.title,
-    fontSize: 36,
+    fontSize: 48,
     fontWeight: "bold",
   },
 });
