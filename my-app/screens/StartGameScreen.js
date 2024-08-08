@@ -37,7 +37,7 @@ function StartGameScreen({ pickedNumberHandler }) {
     <View style={styles.rootContainer}>
       <Title>Guess my Number</Title>
       <View style={styles.inputContainer}>
-        <Text>Enter a Number!</Text>
+        <Text style={styles.instructionText}>Enter a Number!</Text>
         <TextInput
           style={styles.numberInput}
           maxLength={2}
@@ -66,6 +66,10 @@ const styles = StyleSheet.create({
     marginTop: 100,
     alignItems: "center",
   },
+  instructionText: {
+    color: colors.primary600,
+    fontSize: 24,
+  },
   inputContainer: {
     justifyContent: "center",
     alignItems: "center",
@@ -79,6 +83,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 6,
+    opacity: 0.9,
   },
   numberInput: {
     width: 75,
