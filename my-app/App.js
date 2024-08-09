@@ -32,8 +32,6 @@ export default function App() {
     setGameIsOver(true);
   }
 
-  if (gameIsOver && userNumber) return <GameOverScreen />;
-
   return (
     <LinearGradient
       colors={[colors.primary600, colors.primary500]}
@@ -46,15 +44,21 @@ export default function App() {
         imageStyle={styles.backgroundImage}
       >
         <SafeAreaView style={styles.rootScreen}>
-          {!userNumber && (
-            <StartGameScreen pickedNumberHandler={pickedNumberHandler} />
-          )}
+          {gameIsOver && userNumber ? (
+            <GameOverScreen />
+          ) : (
+            <>
+              {!userNumber && (
+                <StartGameScreen pickedNumberHandler={pickedNumberHandler} />
+              )}
 
-          {userNumber && (
-            <GameScreen
-              userNumber={userNumber}
-              onGameOverHandler={gameOverHandler}
-            />
+              {userNumber && (
+                <GameScreen
+                  userNumber={userNumber}
+                  onGameOverHandler={gameOverHandler}
+                />
+              )}
+            </>
           )}
         </SafeAreaView>
       </ImageBackground>
