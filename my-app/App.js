@@ -13,6 +13,7 @@ import GameOverScreen from "./screens/GameOverScreen";
 export default function App() {
   const [userNumber, setUserNumber] = useState(null);
   const [gameIsOver, setGameIsOver] = useState(false);
+  const [guessRounds, setGuessRounds] = useState(0);
 
   const [fontsLoaded] = useFonts({
     "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
@@ -25,11 +26,16 @@ export default function App() {
 
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
-    console.log(pickedNumber);
   }
 
   function gameOverHandler() {
     setGameIsOver(true);
+  }
+
+  function startNewGame() {
+    setUserNumber(null);
+    setGameIsOver(false);
+    setGuessRounds(0);
   }
 
   return (
@@ -45,7 +51,11 @@ export default function App() {
       >
         <SafeAreaView style={styles.rootScreen}>
           {gameIsOver && userNumber ? (
-            <GameOverScreen />
+            <GameOverScreen
+              userNumber={userNumber}
+              roundsNumber={guessRounds}
+              onStartNewGame={startNewGame}
+            />
           ) : (
             <>
               {!userNumber && (
