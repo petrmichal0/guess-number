@@ -1,14 +1,17 @@
-import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
+import { StyleSheet, ImageBackground, SafeAreaView, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useFonts } from "expo-font";
-import { AppLoading } from "expo-app-loading";
+import * as SplashScreen from "expo-splash-screen";
 
 import { colors } from "./constants/colors";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
+
+// Udržujte splash screen zobrazený, dokud se nenačtou zdroje
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [userNumber, setUserNumber] = useState(null);
@@ -20,8 +23,14 @@ export default function App() {
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return null;
   }
 
   function pickedNumberHandler(pickedNumber) {
@@ -49,7 +58,7 @@ export default function App() {
         resizeMode="cover"
         imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.rootScreen}>
+        <SafeAreaView style={styles.rootScreen} onLayout={onLayoutRootView}>
           {gameIsOver && userNumber ? (
             <GameOverScreen
               userNumber={userNumber}
