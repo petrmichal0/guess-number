@@ -1,12 +1,13 @@
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, StyleSheet, Alert, FlatList } from "react-native";
 import { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-import Title from "../ui/Title";
 import NumberContainer from "../components/NumberContainer";
+import GuessLogItem from "../components/GuessLogItem";
 import PrimaryButton from "../ui/PrimaryButton";
 import Card from "../ui/Card";
 import InstructionText from "../ui/InstructionText";
+import Title from "../ui/Title";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -28,7 +29,7 @@ function GameScreen({ userNumber, onGameOverHandler }) {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOverHandler();
+      onGameOverHandler(guessRounds.length);
     }
   }, [currentGuess, userNumber, onGameOverHandler]);
 
@@ -59,6 +60,8 @@ function GameScreen({ userNumber, onGameOverHandler }) {
     setGuessRounds((guessRounds) => [...guessRounds, nwRndNumber]);
   }
 
+  const guessRoundsListLength = guessRounds.length;
+
   return (
     <View style={styles.screen}>
       <Title>Opponents Guess</Title>
@@ -83,10 +86,18 @@ function GameScreen({ userNumber, onGameOverHandler }) {
           </View>
         </View>
       </Card>
-      <View>
-        {guessRounds.map((guessRound) => (
-          <Text key={guessRound}>{guessRound}</Text>
-        ))}
+      <View style={styles.listContainer}>
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => (
+            <GuessLogItem
+              // Zajišťuje, že poslední pokus je nahoře v seznamu (jinak by stačilo itemData.index + 1 )
+              roundNumber={guessRoundsListLength - itemData.index}
+              guess={itemData.item}
+            />
+          )}
+          keyExtractor={(item, index) => index.toString()}
+        />
       </View>
     </View>
   );
@@ -109,5 +120,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 20,
   },
 });
