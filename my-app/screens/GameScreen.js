@@ -1,4 +1,4 @@
-import { View, StyleSheet, Alert, FlatList } from "react-native";
+import { View, StyleSheet, Alert, FlatList, Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -91,7 +91,7 @@ function GameScreen({ userNumber, onGameOverHandler }) {
           data={guessRounds}
           renderItem={(itemData) => (
             <GuessLogItem
-              // Zajišťuje, že poslední pokus je nahoře v seznamu (jinak by stačilo itemData.index + 1 )
+              // Makes sure the last attempt is at the top of the list (otherwise, itemData.index + 1 would be enough).
               roundNumber={guessRoundsListLength - itemData.index}
               guess={itemData.item}
             />
@@ -105,11 +105,14 @@ function GameScreen({ userNumber, onGameOverHandler }) {
 
 export default GameScreen;
 
+const { width } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 36,
     gap: 24,
+    alignItems: "center",
   },
   instructionText: {
     marginBottom: 12,
@@ -123,6 +126,6 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 1,
-    padding: 20,
+    padding: width < 380 ? 5 : 20,
   },
 });
