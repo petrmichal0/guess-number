@@ -18,8 +18,8 @@ const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   listItem: {
     borderRadius: 2,
-    padding: width < 380 ? 4 : 12,
-    marginVertical: width < 380 ? 4 : 8,
+    padding: width < 380 ? 4 : 6,
+    marginVertical: width < 380 ? 4 : 2,
     backgroundColor: colors.primary600,
     opacity: 0.9,
     flexDirection: "row",

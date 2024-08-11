@@ -116,7 +116,7 @@ function GameScreen({ userNumber, onGameOverHandler }) {
   }
 
   // const paddingDistance = width < 380 ? 5 : 20;
-  const paddingDistance = width > 500 ? 5 : 20;
+  const paddingDistance = width > 500 ? 0 : 20;
 
   return (
     <View style={styles.screen}>
