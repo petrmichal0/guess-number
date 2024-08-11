@@ -1,4 +1,10 @@
-import { View, StyleSheet, Alert, FlatList, Dimensions } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Alert,
+  FlatList,
+  useWindowDimensions,
+} from "react-native";
 import { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -26,6 +32,7 @@ function GameScreen({ userNumber, onGameOverHandler }) {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [guessRounds, setGuessRounds] = useState([]);
+  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     if (currentGuess === userNumber) {
@@ -62,9 +69,8 @@ function GameScreen({ userNumber, onGameOverHandler }) {
 
   const guessRoundsListLength = guessRounds.length;
 
-  return (
-    <View style={styles.screen}>
-      <Title>Opponents Guess</Title>
+  let content = (
+    <>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
         <View>
@@ -86,7 +92,37 @@ function GameScreen({ userNumber, onGameOverHandler }) {
           </View>
         </View>
       </Card>
-      <View style={styles.listContainer}>
+    </>
+  );
+
+  if (width > 500) {
+    content = (
+      <>
+        <View style={styles.buttonContainerLandscape}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={() => nextGuessHandler("lower")}>
+              <Ionicons name="remove" size={24} color="white" />
+            </PrimaryButton>
+          </View>
+          <NumberContainer>{currentGuess}</NumberContainer>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={() => nextGuessHandler("higher")}>
+              <Ionicons name="add" size={24} color="white" />
+            </PrimaryButton>
+          </View>
+        </View>
+      </>
+    );
+  }
+
+  // const paddingDistance = width < 380 ? 5 : 20;
+  const paddingDistance = width > 500 ? 5 : 20;
+
+  return (
+    <View style={styles.screen}>
+      <Title>Opponents Guess</Title>
+      {content}
+      <View style={[styles.listContainer, { padding: paddingDistance }]}>
         <FlatList
           data={guessRounds}
           renderItem={(itemData) => (
@@ -105,8 +141,6 @@ function GameScreen({ userNumber, onGameOverHandler }) {
 
 export default GameScreen;
 
-const { width } = Dimensions.get("window");
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -124,8 +158,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
   },
+  buttonContainerLandscape: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    width: "50%",
+  },
   listContainer: {
     flex: 1,
-    padding: width < 380 ? 5 : 20,
   },
 });
