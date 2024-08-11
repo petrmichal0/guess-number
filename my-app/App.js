@@ -1,8 +1,9 @@
-import { StyleSheet, ImageBackground, SafeAreaView, View } from "react-native";
+import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState, useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 
 import { colors } from "./constants/colors";
 
@@ -49,40 +50,43 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      colors={[colors.primary600, colors.primary500]}
-      style={styles.rootScreen}
-    >
-      <ImageBackground
-        source={require("./assets/images/dices.webp")}
+    <>
+      <StatusBar style="light" />
+      <LinearGradient
+        colors={[colors.primary600, colors.primary500]}
         style={styles.rootScreen}
-        resizeMode="cover"
-        imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.rootScreen} onLayout={onLayoutRootView}>
-          {gameIsOver && userNumber ? (
-            <GameOverScreen
-              userNumber={userNumber}
-              roundsNumber={guessRounds}
-              onStartNewGame={startNewGame}
-            />
-          ) : (
-            <>
-              {!userNumber && (
-                <StartGameScreen pickedNumberHandler={pickedNumberHandler} />
-              )}
+        <ImageBackground
+          source={require("./assets/images/dices.webp")}
+          style={styles.rootScreen}
+          resizeMode="cover"
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen} onLayout={onLayoutRootView}>
+            {gameIsOver && userNumber ? (
+              <GameOverScreen
+                userNumber={userNumber}
+                roundsNumber={guessRounds}
+                onStartNewGame={startNewGame}
+              />
+            ) : (
+              <>
+                {!userNumber && (
+                  <StartGameScreen pickedNumberHandler={pickedNumberHandler} />
+                )}
 
-              {userNumber && (
-                <GameScreen
-                  userNumber={userNumber}
-                  onGameOverHandler={gameOverHandler}
-                />
-              )}
-            </>
-          )}
-        </SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+                {userNumber && (
+                  <GameScreen
+                    userNumber={userNumber}
+                    onGameOverHandler={gameOverHandler}
+                  />
+                )}
+              </>
+            )}
+          </SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 
