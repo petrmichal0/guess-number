@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderBottomWidth: 2,
     borderColor: colors.primary600,
-    marginVertical: 8,
+    marginVertical: 16,
     fontSize: 36,
     fontWeight: "600",
     color: colors.primary600,

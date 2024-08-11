@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 24,
     color: colors.title,
+    backgroundColor: colors.background,
+    padding: 12,
+    borderRadius: 12,
   },
   highlight: {
     fontFamily: "open-sans-bold",
