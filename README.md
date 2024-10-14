@@ -1,7 +1,7 @@
-# Guess My Number
+# Guess Number
 
 ## Project Title and Description
-Guess My Number is a simple React Native application where users try to guess a randomly generated number. The app provides feedback on whether the guess is higher or lower, with smooth animations and responsive UI.
+GuessNumber is a simple React Native application where users try to guess a randomly generated number. The app provides feedback on whether the guess is higher or lower, with smooth animations and responsive UI.
 
 ## Badges
 ![Static Badge](https://img.shields.io/badge/status-online-brightgreen)
@@ -40,12 +40,12 @@ Guess My Number is a simple React Native application where users try to guess a 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/petrmichal0/guess-my-number.git
+    git clone https://github.com/petrmichal0/guess-number.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd guess-my-number
+    cd guess-number
     ```
 
 3. Install dependencies:
