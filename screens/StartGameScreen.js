@@ -88,10 +88,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  instructionText: {
-    color: colors.primary600,
-    fontSize: 24,
-  },
 
   numberInput: {
     width: 75,

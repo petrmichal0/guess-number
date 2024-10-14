@@ -38,7 +38,7 @@ function GameScreen({ userNumber, onGameOverHandler }) {
     if (currentGuess === userNumber) {
       onGameOverHandler(guessRounds.length);
     }
-  }, [currentGuess, userNumber, onGameOverHandler]);
+  }, [currentGuess, userNumber, onGameOverHandler, guessRounds.length]);
 
   function nextGuessHandler(direction) {
     // direction => "lower", "higher"
