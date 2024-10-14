@@ -80,18 +80,18 @@ To run the app on a simulator or physical device:
   </tr>
   <tr>
     <td style="border: 1px solid black;">
-      <a href="https://github.com/user-attachments/assets/f7509fc8-8cc7-4160-9fd5-51e6de750105" target="_blank">
-        <img src="https://github.com/user-attachments/assets/f7509fc8-8cc7-4160-9fd5-51e6de750105" width="130" height="300" alt="Start Screen">
+      <a href="https://github.com/user-attachments/assets/12dd04c5-3d7a-41f0-ab3a-a77cdb87377a" target="_blank">
+        <img src="https://github.com/user-attachments/assets/12dd04c5-3d7a-41f0-ab3a-a77cdb87377a" width="130" height="300" alt="Start Screen">
       </a>
     </td>
     <td style="border: 1px solid black;">
-      <a href="https://github.com/user-attachments/assets/acdc16bc-466c-48bf-a171-c7c6ad23c9d9" target="_blank">
-        <img src="https://github.com/user-attachments/assets/acdc16bc-466c-48bf-a171-c7c6ad23c9d9" width="130" height="300" alt="Game Screen">
+      <a href="https://github.com/user-attachments/assets/2a79b817-09f5-41a0-867d-3c26a611d04d" target="_blank">
+        <img src="https://github.com/user-attachments/assets/2a79b817-09f5-41a0-867d-3c26a611d04d" width="130" height="300" alt="Game Screen">
       </a>
     </td>
     <td style="border: 1px solid black;">
-      <a href="https://github.com/user-attachments/assets/3ebf04c3-2b84-4c67-b982-2cb7cd758563" target="_blank">
-        <img src="https://github.com/user-attachments/assets/3ebf04c3-2b84-4c67-b982-2cb7cd758563" width="130" height="300" alt="Game Over Screen">
+      <a href="https://github.com/user-attachments/assets/2a2a9d33-33ac-4a31-8ec6-2170fd84df98" target="_blank">
+        <img src="https://github.com/user-attachments/assets/2a2a9d33-33ac-4a31-8ec6-2170fd84df98" width="130" height="300" alt="Game Over Screen">
       </a>
     </td>
   </tr>
