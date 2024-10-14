@@ -148,9 +148,12 @@ Guess My Number/
 [![React Native Badge](https://img.shields.io/badge/-React_Native-61DAFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DAFB)](#) 
 [![Expo Badge](https://img.shields.io/badge/-Expo-000020?style=for-the-badge&labelColor=black&logo=expo&logoColor=white)](#)
 
-## Third-Party Libraries
-
-- **React Navigation**: Provides navigation capabilities.
+## Third-party Libraries:
+1. **expo-app-loading**: Helps with displaying the splash screen and loading fonts or other assets when the app starts.
+2. **expo-font**: Used for loading custom fonts in your application.
+3. **expo-linear-gradient**: Enables the use of linear gradients in the app's UI.
+4. **expo-splash-screen**: Manages the splash screen during the app startup process.
+5. **expo-status-bar**: Provides control over the status bar on mobile devices.
 
 ## License
 
