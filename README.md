@@ -1,7 +1,7 @@
 # Guess Number
 
 ## Project Title and Description
-GuessNumber is a simple React Native application where users try to guess a randomly generated number. The app provides feedback on whether the guess is higher or lower, with smooth animations and responsive UI.
+Guess Number is a simple React Native application where users try to guess a randomly generated number. The app provides feedback on whether the guess is higher or lower, with smooth animations and responsive UI.
 
 ## Badges
 ![Static Badge](https://img.shields.io/badge/status-online-brightgreen)
