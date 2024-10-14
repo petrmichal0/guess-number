@@ -7,7 +7,7 @@ GuessNumber is a simple React Native application where users try to guess a rand
 ![Static Badge](https://img.shields.io/badge/status-online-brightgreen)
 
 ## Quick Look
-<img src="https://github.com/user-attachments/assets/b63eba49-17db-4003-98d6-e84473b3c15d" width="250" alt="Guess My Number App Demo">
+<img src="https://github.com/user-attachments/assets/57074537-7fc9-444f-aa94-81d1eea5a6c6" width="250" alt="Guess My Number App Demo">
 
 ## Table of Content
 - [Project Title and Description](#project-title-and-description)
