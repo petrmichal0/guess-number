@@ -106,6 +106,7 @@ The easiest way to try the app is by using **Expo Go**. Simply download the [Exp
 
 Alternatively, you can open the app directly in Snack using this link: [Open in Snack](https://snack.expo.dev/@petrmichal0/guess-number?platform=android).
 
+
 ### 2. Download the App Directly
 
 You can also download the app's installation file directly to your device:
