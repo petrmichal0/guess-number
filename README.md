@@ -99,14 +99,19 @@ To run the app on a simulator or physical device:
 
 ## Demo (for End Users)
 
-### 1. Try the App with Expo Go
+### 1. Try the App with Expo Go or Web Preview
+You have two options to try the app:
 
-The easiest way to try the app is by using **Expo Go**. Simply download the [Expo Go](https://expo.dev/client) app on your mobile device and scan the QR code below to launch the app:
+1. **Web Preview (Launch Snack)**:
+   - Simply click this link: [Open in Snack](https://snack.expo.dev/@petrmichal0/guess-number?platform=android).
+   - The page will open with the **Android** tab selected.
+   - Click the **Launch Snack** button to instantly run the app in the web-based Expo Snack environment.
 
-<img src="https://github.com/user-attachments/assets/8991dbe2-82e0-4abf-aeee-4c4e7a472c9a" alt="QR Code for Expo" width="200">
-
-Alternatively, you can open the app directly in Snack using this link: [Open in Snack](https://snack.expo.dev/@petrmichal0/guess-number?platform=android).
-
+2. **Expo Go on Your Mobile Device**:
+   - Download the [Expo Go](https://expo.dev/client) app on your mobile device.
+   - Open the Snack link: [Open in Snack](https://snack.expo.dev/@petrmichal0/guess-number?platform=android).
+   - Select the **My Device** tab.
+   - Scan the QR code with the **Expo Go** app on your mobile device to launch the app on your phone.
 
 ### 2. Download the App Directly
 
@@ -158,4 +163,4 @@ Guess My Number/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the LICENSE file for details.
