@@ -16,7 +16,7 @@ import InstructionText from "../ui/InstructionText";
 import Title from "../ui/Title";
 
 function generateRandomBetween(min, max, exclude) {
-  const rndNum = Math.floor(Math.random() * (max - min)) + min;
+  const rndNum = Math.floor(Math.random() * (max - min +1)) + min;
 
   if (rndNum === exclude) {
     return generateRandomBetween(min, max, exclude);
